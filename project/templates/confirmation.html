@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Booking Confirmation</h2>
+
+<p>Your appointment has been confirmed!</p>
+
+<h3>Your Appointments:</h3>
+<div class="appointments-list">
+    {% for appt in appointments %}
+        <div class="appointment-card">
+            <p><strong>City:</strong> {{ appt.city }}</p>
+            <p><strong>Groomer:</strong> {{ appt.groomer }}</p>
+            <p><strong>Time:</strong> {{ appt.time }}</p>
+
+            <a href="{{ url_for('reschedule', appointment_id=appt.id) }}">
+                <button class="btn-secondary">Reschedule</button>
+            </a>
+            <a href="{{ url_for('cancel', appointment_id=appt.id) }}">
+                <button class="btn-danger">Cancel</button>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Groomie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<header>
+    <h1>🐾 Groomie</h1>
+    {% if session.get("username") %}
+        <nav>
+            <span>Welcome, {{ session["username"] }}!</span>
+            <a href="{{ url_for('choose_city') }}">Choose City</a>
+            <a href="{{ url_for('confirmation') }}">My Appointments</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    {% endif %}
+</header>
+
+<main>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash">
+                {% for msg in messages %}
+                    <p>{{ msg }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    <p>© 2025 Groomie - Pampering Pups in Texas</p>
+</footer>
+</body>
+</html>

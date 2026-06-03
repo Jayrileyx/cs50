@@ -1,0 +1,18 @@
+Music listening preferences based on average energy, valence and danceability
+
+ENERGY
+SELECT AVG(energy) FROM songs;
+Average: 0.65906
+
+VALENCE
+SELECT AVG(valence) FROM songs;
+Average: 0.484443
+
+DANCEABILITY
+SELECT AVG(danceability) FROM songs;
+Average: 0.71646
+
+Question 1: Based on valence the average was half way in the range and shows the listener listens to both happy and sad. Their aura would most likely be Blue.
+
+Question 2: The top 100 songs may not give accurate information of what the listener likes to listen to by factors outside like looped playlists or repeated songs.
+Also a large population size is needed to get a better picture of the listener. 

@@ -1,0 +1,90 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Fredoka', sans-serif;
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Header */
+header {
+  background-color: #e3f2fd;
+  padding: 65px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 48px;
+  color: #1565c0;
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Navigation */
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1565c0;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+main section {
+  background-color: #bbdefb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #0d47a1;
+}
+
+main p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+main a {
+  background-color: #1565c0;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+main a:hover {
+  background-color: #0d47a1;
+}
+
+/* Footer */
+footer {
+  background-color: #0d47a1;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+/* Center alignment for selected pages */
+body.center-page main {
+  text-align: center;
+}
+
+body.center-page main p,
+body.center-page main h2,
+body.center-page main a {
+  margin-left: auto;
+  margin-right: auto;
+}

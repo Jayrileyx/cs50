@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Appointments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>My Appointments</h1>
+    {% if appointments %}
+        <ul>
+            {% for appt in appointments %}
+                <li>
+                    <strong>Date:</strong> {{ appt['date'] }}<br>
+                    <strong>Time:</strong> {{ appt['time'] }}<br>
+                    <strong>Groomer:</strong> {{ appt['groomer_name'] }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no appointments booked yet.</p>
+    {% endif %}
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+</body>
+</html>

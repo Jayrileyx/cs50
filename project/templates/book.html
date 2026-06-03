@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Book Appointment with {{ groomer }} in {{ city }}</h2>
+
+<form method="POST">
+  <label for="date">Date:</label>
+  <input type="date" name="date" id="date" required><br><br>
+
+  <label for="time">Time:</label>
+  <select name="time" required>
+    {% for hour in range(8, 18) %}
+      {% for minute in [0, 30] %}
+        <option value="{{ "%02d:%02d" % (hour, minute) }}">{{ "%02d:%02d" % (hour, minute) }}</option>
+      {% endfor %}
+    {% endfor %}
+  </select><br><br>
+
+  <button type="submit" class="btn btn-primary">Book Now</button>
+  <a href="{{ url_for('appointments') }}" class="btn btn-secondary">Cancel</a>
+</form>
+
+<script>
+  // Auto-fill today's date
+  document.addEventListener("DOMContentLoaded", function() {
+    let today = new Date().toISOString().split('T')[0];
+    document.getElementById("date").value = today;
+  });
+</script>
+{% endblock %}
+

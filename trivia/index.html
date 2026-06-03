@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function checkAnswer(button) {
+                var answer = button.getAttribute('multiple_choice-answer');
+                var response = document.getElementById('response');
+
+                if (answer === 'correct'){
+                    button.style.backgroundColor = 'Green';
+                    response.innerHTML = 'Correct!';
+                    response.style.color = 'Green';
+                } else {
+                    button.style.backgroundColor = 'Red';
+                    response.innerHTML = 'Incorrect';
+                    response.style.color = 'Red';
+                }
+            }
+
+            function checkTextAnswer(){
+                var year = document.getElementById('text-answer');
+                var response = document.getElementById('text-response');
+                var answer = year.value;
+
+                if (answer === '1998'){
+                    year.style.backgroundColor = 'Green';
+                    response.innerHTML = 'Correct!';
+                    response.innerHTML = 'Green';
+                } else {
+                    year.style.backgroundColor = 'Red';
+                    response.innerHTML = 'Incorrect';
+                    response.innerHTML = 'Red';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>Who owns the Patent to Google’s original search algorithm?</h3>
+                        <button multiple_choice-answer = "inccorect" onclick = "checkAnswer(this)">Harvard University</button>
+                        <button multiple_choice-answer = "incorrect" onclick = "checkAnswer(this)">Sundar Pichai</button>
+                        <button multiple_choice-answer = "correct" onclick = "checkAnswer(this)">Stanford University</button>
+                        <button multiple_choice-answer = "incorrect" onclick = "checkAnswer(this)">Alphabet.Inc</button>
+                        <div id="response"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>What year was google founded?</h3>
+                 <input type = "text" id = "text-answer">
+                 <button onclick = "checkTextAnswer()">Confirm Answer</button>
+                 <div id = "text-response"></div>
+            </div>
+        </div>
+    </body>
+</html>

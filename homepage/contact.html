@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <title>Contact Us</title>
+</head>
+<body>
+
+  <header>
+    <h1>Adopt an Aussie</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="dogs.html">Available Dogs</a> |
+      <a href="process.html">Adoption Process</a> |
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <p>You can also reach us at <a href="mailto:adopt@aussierescue.org">adopt@aussierescue.org</a>.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Adopt an Aussie</p>
+  </footer>
+
+  <script>
+  document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent actual form submission
+    alert('Thank you for your message!');
+    this.reset(); // clear the form fields
+  });
+  </script>
+
+
+</body>
+</html>

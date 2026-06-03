@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Grooming App</title>
+</head>
+<body>
+    <h1>Welcome to Pet Grooming Booking</h1>
+
+    {% if session.username %}
+        <p>Hello, {{ session.username }}! <a href="{{ url_for('logout') }}">Logout</a></p>
+    {% else %}
+        <p><a href="{{ url_for('login') }}">Login</a></p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('search') }}">
+        <input type="text" name="city" placeholder="Enter city" required>
+        <button type="submit">Search Groomers</button>
+    </form>
+</body>
+</html>

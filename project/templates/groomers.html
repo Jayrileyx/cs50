@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dog Groomers in {{ city }}</h2>
+
+<div class="groomer-container">
+    {% for groomer in groomers %}
+    <div class="groomer-card">
+    <img src="{{ groomer.image }}" alt="{{ groomer.name }}" class="groomer-image">
+    <h3>{{ groomer.name }}</h3>
+
+    <!-- Rating -->
+    <div class="rating">
+        {% set full_stars = groomer.rating|int %}
+        {% set half_star = (groomer.rating - full_stars) >= 0.5 %}
+        {% set empty_stars = 5 - full_stars - (1 if half_star else 0) %}
+
+        {% for _ in range(full_stars) %}
+            <span class="star full">★</span>
+        {% endfor %}
+        {% if half_star %}
+            <span class="star half">☆</span>
+        {% endif %}
+        {% for _ in range(empty_stars) %}
+            <span class="star empty">☆</span>
+        {% endfor %}
+        <span class="rating-number">{{ groomer.rating }}/5</span>
+    </div>
+
+        <p class="address">📍 {{ groomer.address }}</p>
+        <p class="phone">📞 {{ groomer.phone }}</p>
+        <p class="description">{{ groomer.description }}</p>
+        <a class="btn" href="{{ url_for('book', city=city, groomer=groomer.name) }}">Book</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+

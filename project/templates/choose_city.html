@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form-container">
+    <h2>Select Your City</h2>
+    <form method="POST">
+        <label>Choose a City</label>
+        <select name="city" required>
+            {% for city in cities %}
+                <option value="{{ city }}">{{ city }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Find Groomers</button>
+    </form>
+</div>
+{% endblock %}

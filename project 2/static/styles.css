@@ -1,0 +1,171 @@
+/* === General Page Styles === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+}
+
+/* === Header === */
+header {
+    background: #4CAF50;
+    padding: 1em;
+    color: white;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+/* === Main Layout === */
+main {
+    padding: 2em;
+}
+
+footer {
+    background: #ddd;
+    padding: 1em;
+    text-align: center;
+}
+
+/* === Form Styles === */
+form {
+    margin-bottom: 2em;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* === Container Box === */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* === Headings === */
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* === Buttons === */
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* === Results Page Layout === */
+.results-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.results-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+/* === Results Grid === */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+}
+
+/* === Groomer Cards === */
+.groomer {
+    background: white;
+    padding: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.groomer:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.groomer h3 {
+    margin: 0 0 0.5em;
+    color: #4CAF50;
+    font-size: 1.4rem;
+}
+
+.groomer p {
+    margin: 0.3em 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.groomer p strong {
+    color: #333;
+}
+
+.groomer button {
+    margin-top: 1em;
+    padding: 0.6em 1.2em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.groomer button:hover {
+    background-color: #45a049;
+}
+
+/* === Mobile adjustments === */
+@media (max-width: 600px) {
+    .results-container h2 {
+        font-size: 1.5rem;
+    }
+    .groomer {
+        padding: 1em;
+    }
+}
+

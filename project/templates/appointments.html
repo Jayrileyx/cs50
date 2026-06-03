@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Appointments</h2>
+
+{% if appointments %}
+<table>
+  <tr>
+    <th>City</th>
+    <th>Groomer</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Actions</th>
+  </tr>
+  {% for appt in appointments %}
+  <tr>
+    <td>{{ appt.city }}</td>
+    <td>{{ appt.groomer }}</td>
+    <td>{{ appt.date }}</td>
+    <td>{{ appt.time }}</td>
+    <td>
+      <form action="{{ url_for('cancel', appointment_id=appt.id) }}" method="POST" style="display:inline;">
+        <button type="submit" class="btn btn-danger">Cancel</button>
+      </form>
+      <form action="{{ url_for('reschedule', appointment_id=appt.id) }}" method="GET" style="display:inline;">
+        <button type="submit" class="btn btn-warning">Reschedule</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No appointments yet.</p>
+{% endif %}
+{% endblock %}

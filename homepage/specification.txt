@@ -1,0 +1,34 @@
+Specification for Australian Shepherd Adoption Website
+
+HTML Tags Used (10 distinct tags):
+    1. html       - Used to root element of the webpage
+    2. head       - Contains metadata, title, and links to CSS/fonts
+    3. body       - Main content container of the page
+    4. header     - Site header with logo and navigation
+    5. nav        - Navigation menu with links to pages
+    6. main       - Primary content area of each page
+    7. h1, h2     - Headings for titles and section headers
+    8. p          - Paragraphs for text content
+    9. a          - Hyperlinks for navigation and email
+    10. form      - Contact form for users to submit messages
+    11. input     - Form input fields (text, email)
+    12. textarea  - Multi-line input for user messages
+    13. button    - Clickable buttons for interaction
+    14. footer    - Footer section with copyright
+
+CSS Selectors/Properties Used (at least 5 distinct properties):
+    1. color            - Set text colors for readability and cooridnating palette
+    2. background-color - Define background colors for sections
+    3. font-family      - Apply custom fonts for a friendly look (wanted to add the font fredoka because it is playful)
+    4. text-align       - Center or left-align text on pages
+    5. margin/padding   - Add spacing around elements for layout
+    6. border-radius    - Rounded corners for buttons and cards
+    7. display          - Control layout with flexbox or grid
+    8. box-shadow       - Add depth to cards and buttons
+
+JavaScript Usage:
+    I used JavaScript to add simple interactivity by handling form submission events to show a thank-you alert and reset the form, enhancing user experience. 
+
+Bootstrap Usage:
+    I used bootstrap on the "Available Dogs" page because of the images used from the real rescue website and I wanted to create responsive, styled card components that neatly display dog profiles with minimal custom CSS.
+

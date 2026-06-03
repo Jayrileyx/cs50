@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+</head>
+<body>
+    <h1>Book Appointment with {{ groomer[1] }}</h1>
+
+    {% if slots %}
+        <ul>
+            {% for s in slots %}
+                <li>{{ s[1] }}
+                    <form action="{{ url_for('book_appointment') }}" method="POST" style="display:inline;">
+                        <input type="hidden" name="groomer_id" value="{{ groomer[0] }}">
+                        <input type="hidden" name="slot_id" value="{{ s[0] }}">
+                        <button type="submit">Book This Slot</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No available slots.</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('search') }}">Back to Search</a></p>
+</body>
+</html>
